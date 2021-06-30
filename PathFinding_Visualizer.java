@@ -176,6 +176,8 @@ public class PathFinding {
 		toolBx.setBounds(space,20,120,25);
 		toolP.add(toolBx);
 		space+=buff;
+		
+		frame.getContentPane().add(toolP);
 
 //		
 		canvas = new Map();
@@ -441,9 +443,10 @@ public class PathFinding {
 					 if(o1.getEuclidDist()<o2.getEuclidDist())
 					 {
 						 return 1;
-					 }else {
-						 return 0;
+					 }else if(o1.getEuclidDist()>o2.getEuclidDist()){
+						 return -1;
 					 }
+					 return 0;
 					
 				}
 				
